@@ -18,4 +18,4 @@ spec:
         image: aksaz01devvvd01registry.azurecr.io/hurivono/joohan_vue_crud_security:241028_03
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 8080
