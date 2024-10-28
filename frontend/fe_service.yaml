@@ -7,8 +7,9 @@ metadata:
 spec:
   ports:
   - port: 8083
+    nodePort: 30002
     targetPort: 8080
     name: http
   selector:
     app: vue
-  type: ClusterIP
+  type: NodePort
