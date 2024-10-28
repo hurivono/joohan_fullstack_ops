@@ -4,10 +4,11 @@ metadata:
   name: vue-ingress
   namespace: joohan  # 필요한 경우 네임스페이스를 수정하세요
   annotations:
-    kubernetes.io/ingress.class: "nginx"  # 사용하는 Ingress Controller에 따라 수정하세요
+    nginx.ingress.kubernetes.io/rewrite-target: /  # 사용하는 Ingress Controller에 따라 수정하세요
 spec:
+  ingressClassName: webapprouting.kubernetes.azure.com
   rules:
-    - host: nip.io/  # 요청할 도메인 이름 # 수정 필요
+    - host: joohan-10.241.163.146.nip.io  # 요청할 도메인 이름 # 수정 필요
       http:
         paths:
           - path: /
