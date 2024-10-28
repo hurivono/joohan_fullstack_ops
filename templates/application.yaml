@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: joohan-febe-app
+  namespace: joohan
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: joohan
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: joohan-febe-app
+    repoURL: https://github.com/hurivono/joohan_fullstack_ops
+    targetRevision: HEAD
