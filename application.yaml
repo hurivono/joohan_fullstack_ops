@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/your-username/your-repo.git' # 실제 리포지토리 URL로 변경
+    path: './'
+    targetRevision: HEAD
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: my-app-namespace # 실제 네임스페이스로 변경
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  childApplications:
+    - name: backend
+      source:
+        repoURL: 'https://github.com/your-username/your-repo.git'
+        path: 'backend'
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: my-app-namespace
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+    - name: frontend
+      source:
+        repoURL: 'https://github.com/your-username/your-repo.git'
+        path: 'frontend'
+      destination:
+        server: 'https://kubernetes.default.svc'
+        namespace: my-app-namespace
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+

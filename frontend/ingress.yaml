@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vue-ingress
+  namespace: joohan  # 필요한 경우 네임스페이스를 수정하세요
+  annotations:
+    kubernetes.io/ingress.class: "nginx"  # 사용하는 Ingress Controller에 따라 수정하세요
+spec:
+  rules:
+    - host: nip.io/  # 요청할 도메인 이름 # 수정 필요
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: vue-svc  # 연결할 서비스 이름
+                port:
+                  number: 8083  # 서비스 포트
