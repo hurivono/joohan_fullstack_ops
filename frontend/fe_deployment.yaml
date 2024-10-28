@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: vue-app
-        image: aksaz01devvvd01registry.azurecr.io/hurivono/joohan_vue_crud_security:241028_02
+        image: aksaz01devvvd01registry.azurecr.io/hurivono/joohan_vue_crud_security:241028_03
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
