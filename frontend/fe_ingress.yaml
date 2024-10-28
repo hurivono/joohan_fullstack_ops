@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: webapprouting.kubernetes.azure.com
   rules:
-    - host: 10.241.163.148.nip.io  # 요청할 도메인 이름 # 수정 필요
+    - host: joohan.kt.co.kr  # 요청할 도메인 이름 # 수정 필요
       http:
         paths:
           - path: /
