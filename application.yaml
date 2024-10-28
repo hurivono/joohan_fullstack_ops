@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/hurivono/joohan_fullstack_ops.git' # 실제 리포지토리 URL로 변경
-    path: './'
+    path: 
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
@@ -20,7 +20,7 @@ spec:
     - name: backend
       source:
         repoURL: 'https://github.com/hurivono/joohan_fullstack_ops.git'
-        path: '/backend'
+        path: 'backend'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: joohan
@@ -31,7 +31,7 @@ spec:
     - name: frontend
       source:
         repoURL: 'https://github.com/hurivono/joohan_fullstack_ops.git'
-        path: '/frontend'
+        path: 'frontend'
       destination:
         server: 'https://kubernetes.default.svc'
         namespace: joohan
