@@ -11,6 +11,6 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: joohan-febe-app
+    path: .
     repoURL: https://github.com/hurivono/joohan_fullstack_ops
     targetRevision: HEAD
