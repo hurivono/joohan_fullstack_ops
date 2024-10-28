@@ -6,10 +6,8 @@ metadata:
     app: vue
 spec:
   ports:
-  - port: 8083
-    nodePort: 30002
-    targetPort: 8080
+  - port: 8080
+    targetPort: 80
     name: http
   selector:
     app: vue
-  type: NodePort
