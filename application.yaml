@@ -6,12 +6,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/your-username/your-repo.git' # 실제 리포지토리 URL로 변경
+    repoURL: 'https://github.com/hurivono/joohan_fullstack_ops.git' # 실제 리포지토리 URL로 변경
     path: './'
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: my-app-namespace # 실제 네임스페이스로 변경
+    namespace: joohan # 실제 네임스페이스로 변경
   syncPolicy:
     automated:
       prune: true
@@ -19,22 +19,22 @@ spec:
   childApplications:
     - name: backend
       source:
-        repoURL: 'https://github.com/your-username/your-repo.git'
-        path: 'backend'
+        repoURL: 'https://github.com/hurivono/joohan_fullstack_ops.git'
+        path: '/backend'
       destination:
         server: 'https://kubernetes.default.svc'
-        namespace: my-app-namespace
+        namespace: joohan
       syncPolicy:
         automated:
           prune: true
           selfHeal: true
     - name: frontend
       source:
-        repoURL: 'https://github.com/your-username/your-repo.git'
-        path: 'frontend'
+        repoURL: 'https://github.com/hurivono/joohan_fullstack_ops.git'
+        path: '/frontend'
       destination:
         server: 'https://kubernetes.default.svc'
-        namespace: my-app-namespace
+        namespace: joohan
       syncPolicy:
         automated:
           prune: true
